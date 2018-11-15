@@ -38,13 +38,4 @@
         android:layout_marginRight="30dp"
         android:layout_marginTop="20dp"
         android:src="@mipmap/room_down_share" />
-
-    <ListView
-        android:id="@+id/lv_count"
-        android:layout_width="350dp"
-        android:layout_height="200dp"
-        android:layout_marginTop="300dp">
-    </ListView>
-
-
 </RelativeLayout>

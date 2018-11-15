@@ -36,8 +36,9 @@ public class SWCameraStreamingActivity extends Activity implements StreamingStat
     private StreamingProfile mProfile;
     private  CameraPreviewFrameView cameraPreviewFrameView;
     private TextView tv_show_name;
-    private ListView lv_count;
+
     private ImageView iv_back;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -49,8 +50,6 @@ public class SWCameraStreamingActivity extends Activity implements StreamingStat
         tv_show_name = findViewById(R.id.tv_show_name);
 
         cameraPreviewFrameView = findViewById(R.id.cameraPreview_surfaceView);
-
-        lv_count  = findViewById(R.id.lv_count);
 
         iv_back = findViewById(R.id.iv_back);
         iv_back.setOnClickListener(this);
