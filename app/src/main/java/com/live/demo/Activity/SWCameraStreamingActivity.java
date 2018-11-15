@@ -164,6 +164,7 @@ public class SWCameraStreamingActivity extends Activity implements StreamingStat
         runOnUiThread(new Runnable() {
             @Override
             public void run() {
+
                 Log.d(TAG, "run:totalAVBitrate ===>"+streamStatus.totalAVBitrate);
                 Log.d(TAG, "run:audioFps ===>"+streamStatus.audioFps);
                 Log.d(TAG, "run:videoFps ===>"+streamStatus.videoFps);
