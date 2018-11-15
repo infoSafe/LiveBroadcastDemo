@@ -7,7 +7,6 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
-import android.widget.ListView;
 import android.widget.TextView;
 
 import com.live.demo.R;
@@ -36,7 +35,6 @@ public class SWCameraStreamingActivity extends Activity implements StreamingStat
     private StreamingProfile mProfile;
     private  CameraPreviewFrameView cameraPreviewFrameView;
     private TextView tv_show_name;
-
     private ImageView iv_back;
 
     @Override
@@ -83,7 +81,8 @@ public class SWCameraStreamingActivity extends Activity implements StreamingStat
             setting.setCameraId(Camera.CameraInfo.CAMERA_FACING_FRONT) // 摄像头切换
                     .setContinuousFocusModeEnabled(true)//开启对焦
                     .setFocusMode(CameraStreamingSetting.FOCUS_MODE_CONTINUOUS_VIDEO)//自动对焦
-                    .setFaceBeautySetting(new CameraStreamingSetting.FaceBeautySetting(1.0f, 1.0f, 1.0f))//美颜 磨皮，美白，红润 取值范围为[0.0f, 1.0f]
+                    .setBuiltInFaceBeautyEnabled(true)//开启美颜
+                    .setFaceBeautySetting(new CameraStreamingSetting.FaceBeautySetting(1.0f, 1.0f, 0.7f))// 磨皮，美白，红润 取值范围为[0.0f, 1.0f]
                     .setVideoFilter(CameraStreamingSetting.VIDEO_FILTER_TYPE.VIDEO_FILTER_BEAUTY)
                     .setCameraPrvSizeLevel(CameraStreamingSetting.PREVIEW_SIZE_LEVEL.MEDIUM)
                     .setCameraPrvSizeRatio(CameraStreamingSetting.PREVIEW_SIZE_RATIO.RATIO_16_9);
@@ -115,12 +114,16 @@ public class SWCameraStreamingActivity extends Activity implements StreamingStat
                 Log.d(TAG, "onStateChanged: ===>"+"IO异常");
                 break;
             case SENDING_BUFFER_EMPTY:
+                Log.d(TAG, "onStateChanged: ===>"+"发送缓冲区为空");
                 break;
             case SENDING_BUFFER_FULL:
+                Log.d(TAG, "onStateChanged: ===>"+"发送缓冲区满");
                 break;
             case AUDIO_RECORDING_FAIL:
+                Log.d(TAG, "onStateChanged: ===>"+"录音失败");
                 break;
             case OPEN_CAMERA_FAIL:
+                Log.d(TAG, "onStateChanged: ===>"+"相机打开失败");
                 break;
             case DISCONNECTED:
                 Log.d(TAG, "onStateChanged: ===>"+"断开连接");
