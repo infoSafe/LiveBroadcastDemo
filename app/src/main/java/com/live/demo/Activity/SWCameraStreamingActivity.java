@@ -4,7 +4,6 @@ import android.app.Activity;
 import android.hardware.Camera;
 import android.os.Bundle;
 import android.util.Log;
-import android.widget.TextView;
 
 import com.live.demo.R;
 import com.live.demo.ui.CameraPreviewFrameView;
@@ -16,7 +15,6 @@ import com.qiniu.android.dns.local.AndroidDnsServer;
 import com.qiniu.android.dns.local.Resolver;
 import com.qiniu.pili.droid.streaming.CameraStreamingSetting;
 import com.qiniu.pili.droid.streaming.MediaStreamingManager;
-import com.qiniu.pili.droid.streaming.StreamStatusCallback;
 import com.qiniu.pili.droid.streaming.StreamingProfile;
 import com.qiniu.pili.droid.streaming.StreamingState;
 import com.qiniu.pili.droid.streaming.StreamingStateChangedListener;
@@ -32,7 +30,6 @@ public class SWCameraStreamingActivity extends Activity implements StreamingStat
     private MediaStreamingManager mMediaStreamingManager;
     private StreamingProfile mProfile;
     private  CameraPreviewFrameView cameraPreviewFrameView;
-    private TextView mStatView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,7 +40,6 @@ public class SWCameraStreamingActivity extends Activity implements StreamingStat
 
     public void initView(){
        cameraPreviewFrameView = findViewById(R.id.cameraPreview_surfaceView);
-        mStatView =  findViewById(R.id.stream_status);
         String publishURLFromServer = getIntent().getStringExtra("stream_publish_url");
         Log.d(TAG, "initView: ===>"+publishURLFromServer);
             mProfile = new StreamingProfile();
