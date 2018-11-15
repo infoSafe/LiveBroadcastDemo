@@ -4,14 +4,24 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:gravity="center_horizontal"
-    tools:context=".demo.Activity.MainActivity">
+    tools:context=".demo.Activity.MainActivity"
+    android:orientation="vertical">
+
+
+    <EditText
+        android:id="@+id/et_name"
+        android:gravity="center"
+        android:hint="输入直播间名称"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="80dp"/>
 
     <TextView
         android:id="@+id/tv_start"
-        android:text="开始推流"
+        android:text="开始直播"
         android:gravity="center"
         android:textSize="18sp"
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="80dp"
         android:textColor="@color/textColorPrimary"
         android:background="@color/colorHeader"
         android:layout_width="160dp"
