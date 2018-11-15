@@ -27,8 +27,7 @@ import java.net.URISyntaxException;
 
 import static com.qiniu.pili.droid.streaming.AVCodecType.SW_VIDEO_WITH_SW_AUDIO_CODEC;
 
-public class SWCameraStreamingActivity extends Activity implements StreamingStateChangedListener,
-        StreamStatusCallback  {
+public class SWCameraStreamingActivity extends Activity implements StreamingStateChangedListener{
     private static final String TAG = "LiveAcivity";
     private MediaStreamingManager mMediaStreamingManager;
     private StreamingProfile mProfile;
@@ -82,7 +81,7 @@ public class SWCameraStreamingActivity extends Activity implements StreamingStat
     public void onStateChanged(StreamingState streamingState, Object o) {
         switch (streamingState) {
             case PREPARING:
-                Log.d(TAG, "onStateChanged: ===>"+"准备");
+                    Log.d(TAG, "onStateChanged: ===>"+"准备");
                 break;
             case READY:
                 startStreaming();
@@ -155,24 +154,6 @@ public class SWCameraStreamingActivity extends Activity implements StreamingStat
             ex.printStackTrace();
         }
         return new DnsManager(NetworkInfo.normal, new IResolver[]{r0, r1, r2});
-    }
-
-
-    @Override
-    public void notifyStreamStatusChanged(final StreamingProfile.StreamStatus streamStatus) {
-        Log.d(TAG, "notifyStreamStatusChanged: ===>"+"fps显示");
-        runOnUiThread(new Runnable() {
-            @Override
-            public void run() {
-
-                Log.d(TAG, "run:totalAVBitrate ===>"+streamStatus.totalAVBitrate);
-                Log.d(TAG, "run:audioFps ===>"+streamStatus.audioFps);
-                Log.d(TAG, "run:videoFps ===>"+streamStatus.videoFps);
-                mStatView.setText("bitrate:" + streamStatus.totalAVBitrate / 1024 + " kbps"
-                        + "\naudio:" + streamStatus.audioFps + " fps"
-                        + "\nvideo:" + streamStatus.videoFps + " fps");
-            }
-        });
     }
 
 
