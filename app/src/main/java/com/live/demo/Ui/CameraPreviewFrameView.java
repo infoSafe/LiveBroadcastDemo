@@ -1,4 +1,4 @@
-package com.live.demo.ui;
+package com.live.demo.Ui;
 
 import android.content.Context;
 import android.opengl.GLSurfaceView;

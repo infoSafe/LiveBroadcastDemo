@@ -11,7 +11,7 @@ import android.widget.ListView;
 import android.widget.TextView;
 
 import com.live.demo.R;
-import com.live.demo.ui.CameraPreviewFrameView;
+import com.live.demo.Ui.CameraPreviewFrameView;
 import com.qiniu.android.dns.DnsManager;
 import com.qiniu.android.dns.IResolver;
 import com.qiniu.android.dns.NetworkInfo;
